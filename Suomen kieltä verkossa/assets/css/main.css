@@ -465,6 +465,17 @@ h6 {
   text-align: center;
   padding: 30px 0;
   position: relative;
+  display: flex;
+}
+.footer .logo {
+  display: flex;
+  align-items: center, left;/* Центрирование логотипа по вертикали */
+  justify-content: flex-start; /* Логотип остается слева */
+  margin-left: 50px; /* Отодвигает логотип вправо на 50 пикселей */
+}
+
+.footer .logo img {
+  height: 80px; /* Высота логотипа */
 }
 
 /* Убедитесь, что никакой другой элемент с непрозрачным фоном не перекрывает изображение */
