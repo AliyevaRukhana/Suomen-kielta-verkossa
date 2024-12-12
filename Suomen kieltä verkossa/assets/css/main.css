@@ -1323,6 +1323,13 @@ section,
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
 }
+/* Добавление фонового изображения */
+.template.template-1 {
+  background-image: url('/assets/img/Template Background 1.jpeg'); /* Замените на URL нужного изображения */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 /* Эффект увеличения при наведении */
 .template:hover {
@@ -1349,7 +1356,7 @@ section,
   line-height: 1.6;
   margin: 10px 0 0;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* Ограничение текста тремя строками */
+  -webkit-line-clamp: 5; /* Ограничение текста тремя строками */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
