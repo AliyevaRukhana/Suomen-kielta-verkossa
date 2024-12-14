@@ -171,7 +171,7 @@ h6 {
 }
 
 .header .header-social-links {
-  padding-right: 15px;
+  padding-right: 15px; 
 }
 
 .header .header-social-links a {
@@ -684,8 +684,8 @@ section,
 }
 
 .etusivu h2 {
-  margin: 0;
-  font-size: 36px;
+  margin-top: -70px; /* Поднимаем текст на 20px выше */
+  font-size: 45px;
   font-weight: 700;
   line-height: 56px;
 }
