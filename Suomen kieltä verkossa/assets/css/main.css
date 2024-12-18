@@ -689,7 +689,7 @@ section,
 }
 
 .etusivu h2 {
-  margin-top: -70px; /* Поднимаем текст на 20px выше */
+  margin-top: -50px; /* Поднимаем текст на 20px выше */
   font-size: 45px;
   font-weight: 700;
   line-height: 56px;
@@ -739,6 +739,28 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+#about {
+  position: relative;
+  background: url('assets/img/background.jpg') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+#about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Настраиваем уровень затемнения */
+  z-index: 1; /* Устанавливаем затемнение ниже контента */
+}
+
+#about .container {
+  position: relative;
+  z-index: 2; /* Устанавливаем контент выше затемнения */
+}
 .about .content h2 {
   font-weight: 700;
   font-size: 24px;
