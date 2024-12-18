@@ -1147,4 +1147,40 @@ div div {
   }
 }
 
+/*--------------------------------------------------------------
+# Button 
+--------------------------------------------------------------*/
+/* Кнопка внутри контейнера */
+.btn {
+  position: absolute; /* Абсолютное позиционирование */
+  bottom: 20px; /* Отступ от нижнего края контейнера */
+  right: 20px; /* Отступ от правого края контейнера */
+  background: linear-gradient(135deg, #a8e6a3 0%, #cfe8c0 50%, #e3f5dd 100%); /* Мягкий градиент */
+  color: #4c704c; /* Приглушённый зелёный текст */
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 8px 24px; /* Меньше вертикальные отступы */
+  border: 2px solid #cfe8c0; /* Мятный бордер */
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5); /* Легкое свечение */
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10; /* Поверх содержимого контейнера */
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #e3f5dd 0%, #cfe8c0 50%, #a8e6a3 100%); /* Инверсия мягкого градиента */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.btn:active {
+  background: #cfe8c0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transform: scale(0.98);
+}
 
