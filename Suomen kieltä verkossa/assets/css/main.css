@@ -1071,4 +1071,13 @@ section,
 .yki-info {
    position: center;
    padding-left:500px;
+}¨
+
+.container-1 {
+  width: 199px;
+  height: 100px
+}
+
+.inner-box {
+  font-size: 20px;
 }
