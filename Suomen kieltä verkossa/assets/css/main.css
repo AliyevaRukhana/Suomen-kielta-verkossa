@@ -61,10 +61,15 @@
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
 body {
-  background-image: url('assets/img/photo1.jpg'); /* Укажите путь к вашему изображению */
-  background-color: var(--background-color);
+  background-image: url('assets/img/Template Background 1.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
   color: var(--default-color);
-  font-family: "Oswald", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -779,6 +784,7 @@ section,
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
 }
+
 /* Добавление фонового изображения */
 .template.template-1 {
   background-image: url('assets/img/Template Background 1.jpeg'); /* Замените на URL нужного изображения */
@@ -799,20 +805,21 @@ section,
   margin: 15px 0;
   line-height: 1.4;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* Ограничение текста тремя строками */
+  -webkit-line-clamp: 2; /* Ограничение текста двумя строками */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: var(--highlight-text-color); /* Яркий текст */
 }
 
 /* Стили для описания */
 .template p {
   font-size: 14px;
-  color: var(--default-color);
+  color: var(--highlight-text-color); /* Яркий текст */
   line-height: 1.6;
   margin: 10px 0 0;
   display: -webkit-box;
-  -webkit-line-clamp: 5; /* Ограничение текста тремя строками */
+  -webkit-line-clamp: 4; /* Ограничение текста  строками */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -849,6 +856,7 @@ section,
   padding: 20px;
   box-sizing: border-box;
 }
+
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
