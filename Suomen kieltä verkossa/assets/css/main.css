@@ -1083,68 +1083,21 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-/* Закругленные углы для всех контейнеров */
-div {
-  border-radius: 12px; /* Закругленные углы для всех контейнеров */
+.starter-section {
+  /* Add your styles here */
+}
+.ykiotsikko {
+   padding-top: 50px;
 }
 
-/* Закругленные углы для внутренних контейнеров */
-div div {
-  border-radius: 12px; /* Вложенные контейнеры */
-}
-
-/* Ваш класс .yki-info */
 .yki-info {
-  display: flex; /* Включаем Flexbox */
-  flex-direction: column; /* Элементы располагаются вертикально */
-  justify-content: center; /* Вертикальное центрирование */
-  align-items: center; /* Горизонтальное центрирование */
-  height: fit-content; /* Высота контейнера: 100% высоты экрана минус 4 см (2 см сверху и снизу) */
-  margin: 2cm auto; /* Центрирование с отступами сверху и снизу */
-  background-color: rgba(0, 0, 0, 0.8); /* Темный фон с прозрачностью */
-  border-radius: 12px; /* Закругленные углы */
-  padding: 20px; /* Внутренние отступы */
-  color: #fff; /* Белый текст */
-  text-align: center; /* Центрирование текста */
+   position: center;
+   padding-left:500px;
 }
 
-.yki-info h5 {
-  font-size: 1.2em; /* Увеличенный размер шрифта */
-  font-weight: 400; /* Обычный вес текста */
-  color: #fff; /* Белый текст */
-  margin: 0;
-  opacity: 0; /* Начальная прозрачность */
-  transform: translateX(-100%); /* Текст вылетает из левой стороны */
-  animation: slide-in 0.8s ease-out forwards; /* Анимация */
+/*--------------------------------------------------------------
+# Ota yhteyttä
+--------------------------------------------------------------*/
+.form-title, .form-text {
+  color: white;
 }
-
-/* Задержки для каждого <h5> */
-.yki-info h5:nth-child(1) {
-  animation-delay: 0.3s;
-}
-.yki-info h5:nth-child(2) {
-  animation-delay: 0.6s;
-}
-.yki-info h5:nth-child(3) {
-  animation-delay: 0.9s;
-}
-.yki-info h5:nth-child(4) {
-  animation-delay: 1.2s;
-}
-.yki-info h5:nth-child(5) {
-  animation-delay: 1.5s;
-}
-
-/* Анимация "вылетания" */
-@keyframes slide-in {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-
