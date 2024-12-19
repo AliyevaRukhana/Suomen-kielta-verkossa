@@ -53,17 +53,10 @@
           <li class="dropdown">
             <a href="#"><span>Palvelut</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="yki.html">YKI Valmennus</a></li>
-              <li class="dropdown">
-                <a href="#"><span>Suomen Kieli Eri Tasoilla</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#alkeistaso">Alkeistaso A1.1-A2.2</a></li>
-                  <li><a href="#keskitaso">Keskitaso B1.1-B2.2</a></li>
-                  <li><a href="#ylintaso">Ylin taso C1-C2</a></li>
-                </ul>
-              </li>
-              <li><a href="selkokieli.html">Selkokieli</a></li>
-              <li><a href="#">Ammattilaisen suomea</a></li>
+                <li><a href="yki.html">Valmennus YKI-testiin</a></li>
+                <li><a href="taso.html">Alkeista eteenpäin</a></li>
+                <li><a href="selkokieli.html">Selkokieli</a></li>
+                <li><a href="ammattilaisen_suomea.html">Ammattilaisen suomea</a></li>
             </ul>
           </li>
           <li><a href="ota_yhteytta.html">Ota yhteyttä</a></li>
@@ -129,7 +122,9 @@
     
          <form action="https://formsubmit.co/suomenkieltaverkossa@gmail.com" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
 
-           
+             <input type="hidden" name="kiitosViestista" value="https://suomenkieltaverkossa.fi/kiitos_viestista.html">
+
+
 
              <div class="row gy-4">
 
@@ -151,7 +146,7 @@
 
 
                  <span></span>
-                 <input type="number" name="number" id="" class="box"
+                 <input type="number" name="number" id="puhelinnumero" class="box"
                         placeholder="Puhelinnumero" autocomplete="off">
 
 
