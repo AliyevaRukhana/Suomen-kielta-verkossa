@@ -66,7 +66,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: Arial, sans-serif;
+  font-family:"Batang", serif;;
   color: var(--default-color);
   margin: 0;
   padding: 0;
@@ -90,7 +90,7 @@ h4,
 h5,
 h6 {
   color: var(--heading-color);
-  font-family: "Oswald", sans-serif;
+  font-family: "Batang", serif;
 }
 
 /* PHP Email Form Messages
