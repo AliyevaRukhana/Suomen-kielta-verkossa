@@ -1093,11 +1093,17 @@ section,
 .yki-info {
    position: center;
    padding-left:500px;
+}¨
+
+.container-1 {
+  width: 199px;
+  height: 100px
 }
 
-/*--------------------------------------------------------------
-# Ota yhteyttä
---------------------------------------------------------------*/
-.form-title, .form-text {
-  color: white;
+.inner-box {
+  font-size: 20px;
+}
+
+.inner-box-taso{
+  font-size: 20px;
 }
