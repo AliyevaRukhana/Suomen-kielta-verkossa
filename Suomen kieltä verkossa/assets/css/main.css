@@ -1107,3 +1107,39 @@ section,
 .inner-box-taso{
   font-size: 20px;
 }
+/* Стиль кнопки с градиентом */
+.btn-primary-gradient {
+  background: linear-gradient(90deg, #8cc58b, #4caf50, #8cc58b); /* Переливающийся градиент */
+  background-size: 300% 300%; /* Увеличенный размер для анимации */
+  color: #fff; /* Белый цвет текста */
+  border: none; /* Убираем рамку */
+  border-radius: 25px; /* Скругленные края */
+  padding: 10px 20px; /* Внутренние отступы */
+  font-size: 16px; /* Размер текста */
+  text-align: center; /* Центрирование текста */
+  text-decoration: none; /* Убираем подчеркивание */
+  display: inline-block; /* Для корректного отображения */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавные переходы */
+  animation: gradient-animation 4s ease infinite; /* Анимация градиента */
+}
+
+/* Эффекты при наведении */
+.btn-primary-gradient:hover {
+  transform: scale(1.05); /* Увеличение размера кнопки */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+}
+
+/* Анимация градиента */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; /* Начальная позиция */
+  }
+  50% {
+    background-position: 100% 50%; /* Средняя позиция */
+  }
+  100% {
+    background-position: 0% 50%; /* Конечная позиция */
+  }
+}
+
+
