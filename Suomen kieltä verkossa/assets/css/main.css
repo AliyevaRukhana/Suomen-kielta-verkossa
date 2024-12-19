@@ -1131,39 +1131,37 @@ section,
     text-align: center;
 }
 
-/* Стиль кнопки с градиентом */
+/* Gradient-painikkeen tyyli */
 .btn-primary-gradient {
-  background: linear-gradient(90deg, #8cc58b, #4caf50, #8cc58b); /* Переливающийся градиент */
-  background-size: 300% 300%; /* Увеличенный размер для анимации */
-  color: #fff; /* Белый цвет текста */
-  border: none; /* Убираем рамку */
-  border-radius: 25px; /* Скругленные края */
-  padding: 10px 20px; /* Внутренние отступы */
-  font-size: 16px; /* Размер текста */
-  text-align: center; /* Центрирование текста */
-  text-decoration: none; /* Убираем подчеркивание */
-  display: inline-block; /* Для корректного отображения */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавные переходы */
-  animation: gradient-animation 4s ease infinite; /* Анимация градиента */
+  background: linear-gradient(90deg, #8cc58b, #4caf50, #8cc58b); /* Liukuva gradient */
+  background-size: 300% 300%; /* Suurentunut koko animaatiota varten */
+  color: #fff; /* Valkoinen tekstiväri */
+  border: none; /* Poistetaan reunaviiva */
+  border-radius: 25px; /* Pyöristetyt kulmat */
+  padding: 10px 20px; /* Sisäiset reunukset */
+  font-size: 16px; /* Tekstin koko */
+  text-align: center; /* Tekstin keskitys */
+  text-decoration: none; /* Poistetaan alleviivaus */
+  display: inline-block; /* Oikeanlainen näyttö */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Sujuvat siirtymät */
+  animation: gradient-animation 4s ease infinite; /* Gradient-animaatio */
 }
 
-/* Эффекты при наведении */
+/* Hover-efektit */
 .btn-primary-gradient:hover {
-  transform: scale(1.05); /* Увеличение размера кнопки */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+  transform: scale(1.05); /* Painikkeen koon suurentaminen */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Lisätään varjo */
 }
 
-/* Анимация градиента */
+/* Gradient-animaatio */
 @keyframes gradient-animation {
   0% {
-    background-position: 0% 50%; /* Начальная позиция */
+    background-position: 0% 50%; /* Alkuasento */
   }
   50% {
-    background-position: 100% 50%; /* Средняя позиция */
+    background-position: 100% 50%; /* Väliasento */
   }
   100% {
-    background-position: 0% 50%; /* Конечная позиция */
+    background-position: 0% 50%; /* Lopullinen asento */
   }
 }
-
-
