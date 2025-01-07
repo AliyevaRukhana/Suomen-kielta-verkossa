@@ -28,6 +28,7 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+
   <!-- =======================================================
   * Template Name: Laura
   * Template URL: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/
@@ -38,6 +39,9 @@
 </head>
 
 <body class="index-page" >
+  <!--Java Script-->
+  <script src="assets/js/count.js"></script>
+
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
@@ -162,7 +166,13 @@
 
                  <div class="col-md-12">
 
-                     <textarea class="form-control" name="message" rows="6" placeholder="Viesti" maxlength="800" required></textarea>
+                  <textarea id="viesti" class="form-control" name="message" rows="6" placeholder="Viesti" maxlength="800" required></textarea>
+                  <small id="char-count">0/800 merkkiä käytetty</small>
+
+                  <!-- Google reCAPTCHA -->
+                  <div class="g-recaptcha" data-sitekey="ВАШ_SITE_KEY">
+                    
+                  </div>
 
                  </div>
 
