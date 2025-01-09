@@ -122,7 +122,8 @@
    
      
     
-         <form action="https://formsubmit.co/suomenkieltaverkossa@gmail.com" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+      <form action="send-mail.php" method="POST" id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+
 
              <input type="hidden" name="kiitosViestista" value="https://suomenkieltaverkossa.fi/kiitos_viestista.html">
 
@@ -173,11 +174,11 @@
 
                  <div class="col-md-12 text-center">
 
-                     <div class="loading">Ladataan</div>
+                  <div class="loading" style="display: none;">Ladataan...</div>
 
-                     <div class="error-message"></div>
+                  <div class="error-message" style="display: none;">Viestin lähettäminen epäonnistui.</div>
 
-                     <div class="sent-message">Viestisi on lähetetty. Kiitos!</div>
+                     <div class="sent-message" style="display: none;">Viestisi on lähetetty. Kiitos!</div>
 
 
 
