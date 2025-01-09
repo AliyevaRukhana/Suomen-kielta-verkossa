@@ -497,38 +497,31 @@ h6 {
   }
 }
 
+
 /*--------------------------------------------------------------
 # Scroll Top Button
 --------------------------------------------------------------*/
 .scroll-top {
   position: fixed;
-  visibility: hidden;
-  opacity: 0;
   right: 15px;
-  bottom: -15px;
-  z-index: 99999;
-  background-color: var(--accent-color);
+  bottom: 15px;
+  background: var(--accent-color);
+  color: #fff;
+  border-radius: 50%;
   width: 44px;
   height: 44px;
-  border-radius: 50px;
-  transition: all 0.4s;
-}
-
-.scroll-top i {
-  font-size: 24px;
-  color: var(--contrast-color);
-  line-height: 0;
-}
-
-.scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  color: var(--contrast-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s;
 }
 
 .scroll-top.active {
   visibility: visible;
   opacity: 1;
-  bottom: 15px;
 }
 
 /*--------------------------------------------------------------
@@ -795,25 +788,22 @@ section,
 /* Общие стили для секции */
 .templates {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Два столбца */
-  gap: 20px; /* Расстояние между элементами */
-  justify-content: center;
-  align-items: stretch;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 0 auto;
   padding: 20px;
-  box-sizing: border-box;
 }
 
 .template {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
   padding: 20px;
   text-align: center;
-  overflow: hidden;
   transition: transform 0.3s ease;
-  cursor: pointer;
 }
 
 .template img {
@@ -825,7 +815,6 @@ section,
 
 .template h3 {
   font-size: 18px;
-  font-weight: 600;
   color: #fff;
   margin: 15px 0;
 }
@@ -839,35 +828,26 @@ section,
 .template .btn {
   margin-top: 15px;
   padding: 10px 20px;
-  border: 2px solid #8cc58b;
-  color: #8cc58b;
-  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
   border-radius: 50px;
-  font-size: 14px;
-  font-weight: 600;
   text-decoration: none;
-  display: inline-block;
-  transition: background 0.3s ease, color 0.3s ease;
+  font-weight: 600;
 }
 
 .template .btn:hover {
-  background: #8cc58b;
+  background: var(--accent-color);
   color: #fff;
 }
 
-/* Адаптация для мобильных устройств */
+/* Mobile Styling */
 @media (max-width: 767px) {
   .templates {
-    grid-template-columns: 1fr; /* Один столбец на мобильных */
-    gap: 15px;
-  }
-
-  .template {
-    padding: 15px;
+    grid-template-columns: 1fr;
   }
 
   .template img {
-    max-height: 150px; /* Меньший размер изображений */
+    max-height: 150px;
   }
 
   .template h3 {
@@ -880,7 +860,29 @@ section,
 
   .template .btn {
     font-size: 12px;
-    padding: 8px 15px;
+  }
+}
+
+/* Mobile Styling */
+@media (max-width: 767px) {
+  .templates {
+    grid-template-columns: 1fr;
+  }
+
+  .template img {
+    max-height: 150px;
+  }
+
+  .template h3 {
+    font-size: 16px;
+  }
+
+  .template p {
+    font-size: 13px;
+  }
+
+  .template .btn {
+    font-size: 12px;
   }
 }
 
@@ -1084,33 +1086,6 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
-.ykiotsikko {
-   padding-top: 50px;
-}
-
-.yki-info {
-   position: center;
-   padding-left:500px;
-}¨
-
-.container-1 {
-  width: 199px;
-  height: 100px
-}
-
-.inner-box {
-  font-size: 20px;
-}
-
-.inner-box-taso{
-  font-size: 20px;
-}
 
 /*--------------------------------------------------------------
 # Ota yhteyttä
