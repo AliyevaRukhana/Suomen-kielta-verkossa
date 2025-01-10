@@ -22,46 +22,7 @@
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
 
-  /**
-   * Переключение мобильного меню
-   */
-  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-  const navMenu = document.querySelector('.navmenu');
-
-  if (mobileNavToggle && navMenu) {
-    mobileNavToggle.addEventListener('click', function() {
-      document.body.classList.toggle('mobile-nav-active');
-      navMenu.classList.toggle('active');
-      mobileNavToggle.classList.toggle('bi-list');
-      mobileNavToggle.classList.toggle('bi-x');
-    });
-  }
-
-  /**
-   * Закрытие мобильного меню при клике на ссылки
-   */
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.body.classList.contains('mobile-nav-active')) {
-        document.body.classList.remove('mobile-nav-active');
-        navMenu.classList.remove('active');
-        mobileNavToggle.classList.add('bi-list');
-        mobileNavToggle.classList.remove('bi-x');
-      }
-    });
-  });
-
-  /**
-   * Переключение выпадающего меню
-   */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(dropdown => {
-    dropdown.addEventListener('click', function(e) {
-      e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.nextElementSibling.classList.toggle('dropdown-active');
-      e.stopPropagation();
-    });
-  });
+  
 
   /**
    * Preloader
