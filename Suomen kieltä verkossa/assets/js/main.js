@@ -17,7 +17,6 @@
     const selectHeader = document.querySelector('#header');
     if (!selectHeader) return;
 
-    // Проверяем, нужно ли добавлять класс .scrolled
     if (window.scrollY > 100) {
       selectBody.classList.add('scrolled');
     } else {
@@ -141,20 +140,46 @@
       }
     });
   }
-  (function () {
-    document.addEventListener('DOMContentLoaded', function () {
-      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-      const navMenu = document.querySelector('.navmenu');
-  
-      if (mobileNavToggle && navMenu) {
-        mobileNavToggle.addEventListener('click', function () {
-          navMenu.classList.toggle('active');
-          this.classList.toggle('bi-list');
-          this.classList.toggle('bi-x');
-        });
-      }
+  document.addEventListener('scroll', navmenuScrollspy);
+
+  /**
+   * Переключение мобильного меню и подменю
+   */
+  document.addEventListener('DOMContentLoaded', function () {
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const navMenu = document.querySelector('.navmenu');
+    const dropdownToggles = document.querySelectorAll('.navmenu .dropdown > a');
+
+    // Переключение мобильного меню
+    if (mobileNavToggle && navMenu) {
+      mobileNavToggle.addEventListener('click', function () {
+        navMenu.classList.toggle('active');
+        this.classList.toggle('bi-list');
+        this.classList.toggle('bi-x');
+      });
+    }
+
+    // Переключение подменю для "Палвелут"
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        const parent = this.parentElement;
+
+        if (parent.classList.contains('active')) {
+          parent.classList.remove('active');
+          const submenu = parent.querySelector('ul');
+          if (submenu) submenu.style.display = 'none';
+        } else {
+          document.querySelectorAll('.navmenu .dropdown.active').forEach(activeDropdown => {
+            activeDropdown.classList.remove('active');
+            const activeSubmenu = activeDropdown.querySelector('ul');
+            if (activeSubmenu) activeSubmenu.style.display = 'none';
+          });
+          parent.classList.add('active');
+          const submenu = parent.querySelector('ul');
+          if (submenu) submenu.style.display = 'block';
+        }
+      });
     });
-  })();
+  });
 })();
-
-

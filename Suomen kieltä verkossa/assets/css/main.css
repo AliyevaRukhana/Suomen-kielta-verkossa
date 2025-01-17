@@ -290,7 +290,6 @@ h6 {
   }
 }
 
-
 /* Мобильное меню */
 @media (max-width: 1199px) {
   .navmenu {
@@ -325,6 +324,7 @@ h6 {
 
   .navmenu li {
     margin-bottom: 10px; /* Отступы между пунктами меню */
+    position: relative; /* Для подменю */
   }
 
   .navmenu a {
@@ -342,8 +342,36 @@ h6 {
     color: #bbb; /* Серый цвет текста при наведении */
   }
 
+  .navmenu .dropdown > a {
+    cursor: pointer;
+    position: relative;
+  }
+
+  .navmenu .dropdown > a::after {
+    content: '\25BC'; /* Стрелка вниз */
+    margin-left: 10px;
+    font-size: 12px;
+    color: #fff;
+  }
+
+  .navmenu .dropdown.active > a::after {
+    content: '\25B2'; /* Стрелка вверх */
+  }
+
+  .navmenu .dropdown ul {
+    display: none; /* Прячем подменю */
+    position: static; /* Для мобильной версии */
+    background: rgba(0, 0, 0, 0.9); /* Тёмный фон подменю */
+    padding: 10px;
+    border-radius: 4px; /* Закругленные углы */
+  }
+
+  .navmenu .dropdown.active ul {
+    display: block; /* Показываем подменю при нажатии */
+  }
+
   .mobile-nav-toggle {
-    display: block;
+    display: block; /* Показываем кнопку-гамбургер */
     position: fixed;
     top: 20px;
     right: 20px;
@@ -353,10 +381,12 @@ h6 {
     cursor: pointer;
   }
 
-  .header-social-links {
-    display: none; /* Скрываем социальные ссылки */
+  .mobile-nav-toggle.bi-x {
+    font-size: 32px; /* Увеличиваем размер иконки при активном меню */
   }
 }
+
+
 
 
 
