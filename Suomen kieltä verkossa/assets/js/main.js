@@ -6,7 +6,7 @@
 * License: https://bootstrapmade.com/license/
 */
 
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -15,14 +15,18 @@
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+    if (!selectHeader) return;
+
+    // Проверяем, нужно ли добавлять класс .scrolled
+    if (window.scrollY > 100) {
+      selectBody.classList.add('scrolled');
+    } else {
+      selectBody.classList.remove('scrolled');
+    }
   }
 
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
-
-  
 
   /**
    * Preloader
@@ -40,7 +44,11 @@
   const scrollTop = document.querySelector('.scroll-top');
   if (scrollTop) {
     function toggleScrollTop() {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+      if (window.scrollY > 100) {
+        scrollTop.classList.add('active');
+      } else {
+        scrollTop.classList.remove('active');
+      }
     }
 
     scrollTop.addEventListener('click', (e) => {
@@ -60,7 +68,7 @@
       duration: 600,
       easing: 'ease-in-out',
       once: true,
-      mirror: false
+      mirror: false,
     });
   }
   window.addEventListener('load', aosInit);
@@ -69,10 +77,9 @@
    * Инициализация слайдеров Swiper
    */
   function initSwiper() {
-    document.querySelectorAll('.init-swiper').forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector('.swiper-config').innerHTML.trim()
-      );
+    const swiperElements = document.querySelectorAll('.init-swiper');
+    swiperElements.forEach((swiperElement) => {
+      const config = JSON.parse(swiperElement.querySelector('.swiper-config').innerHTML.trim());
       new Swiper(swiperElement, config);
     });
   }
@@ -82,33 +89,34 @@
    * Инициализация GLightbox
    */
   const glightbox = GLightbox({
-    selector: '.glightbox'
+    selector: '.glightbox',
   });
 
   /**
    * Инициализация Isotope
    */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+  const isotopeLayouts = document.querySelectorAll('.isotope-layout');
+  isotopeLayouts.forEach((isotopeItem) => {
+    const layout = isotopeItem.getAttribute('data-layout') || 'masonry';
+    const filter = isotopeItem.getAttribute('data-default-filter') || '*';
+    const sort = isotopeItem.getAttribute('data-sort') || 'original-order';
 
-    let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function () {
+      const initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
         itemSelector: '.isotope-item',
         layoutMode: layout,
         filter: filter,
-        sortBy: sort
+        sortBy: sort,
       });
-    });
 
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
+      const filters = isotopeItem.querySelectorAll('.isotope-filters li');
+      filters.forEach((filterItem) => {
+        filterItem.addEventListener('click', function () {
+          isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+          this.classList.add('filter-active');
+          initIsotope.arrange({
+            filter: this.getAttribute('data-filter'),
+          });
         });
       });
     });
@@ -118,19 +126,35 @@
    * Подсветка текущей секции меню
    */
   const navLinks = document.querySelectorAll('.navmenu a');
-
   function navmenuScrollspy() {
-    navLinks.forEach(link => {
+    navLinks.forEach((link) => {
       if (!link.hash) return;
       const section = document.querySelector(link.hash);
       if (!section) return;
+
       const position = window.scrollY + 200;
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        document.querySelectorAll('.navmenu a.active').forEach(activeLink => activeLink.classList.remove('active'));
+      if (position >= section.offsetTop && position <= section.offsetTop + section.offsetHeight) {
+        document.querySelectorAll('.navmenu a.active').forEach((activeLink) => activeLink.classList.remove('active'));
         link.classList.add('active');
       } else {
         link.classList.remove('active');
       }
     });
   }
+  (function () {
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navMenu = document.querySelector('.navmenu');
+  
+      if (mobileNavToggle && navMenu) {
+        mobileNavToggle.addEventListener('click', function () {
+          navMenu.classList.toggle('active');
+          this.classList.toggle('bi-list');
+          this.classList.toggle('bi-x');
+        });
+      }
+    });
+  })();
 })();
+
+

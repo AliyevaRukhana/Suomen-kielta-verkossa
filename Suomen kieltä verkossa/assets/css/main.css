@@ -221,173 +221,142 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-# Navigation Menu
+# Navigation Menu Styles
 --------------------------------------------------------------*/
 
 /* Десктопное меню */
 @media (min-width: 1199px) {
   .navmenu {
-    display: flex; /* Показываем меню */
-    flex-direction: row; /* Располагаем пункты в строку */
-    justify-content: flex-end; /* Выравниваем меню по правому краю */
-    align-items: center;
-    position: static; /* Убираем фиксированное позиционирование */
-    background: transparent; /* Убираем фон */
-    padding: 0;
+    display: flex; /* Отображаем меню */
+    flex-direction: row; /* Пункты меню располагаются в строку */
+    justify-content: center; /* Выравниваем пункты по центру */
+    align-items: center; /* Выравниваем по вертикали */
+    position: fixed; /* Фиксированное позиционирование */
+    top: 30; /* Располагаем меню сверху страницы */
+    left: 0;
+    right: 0;
+    background: transparent; /* Прозрачный фон */
+    padding: 0; /* Убираем внутренние отступы */
+    z-index: 1000; /* Помещаем меню поверх других элементов */
   }
 
   .navmenu ul {
-    display: flex; /* Располагаем пункты меню в строку */
-    list-style: none;
+    display: flex; /* Пункты меню в строку */
+    list-style: none; /* Убираем маркеры списка */
     padding: 0;
     margin: 0;
   }
 
   .navmenu li {
-    position: relative;
+    position: relative; /* Для подменю */
     margin: 0 15px; /* Отступы между пунктами меню */
   }
 
-  .navmenu a,
-  .navmenu a:focus {
-    color: var(--nav-color); /* Основной цвет текста */
-    padding: 18px 15px;
-    font-size: 13px;
-    text-transform: uppercase;
-    font-family: var(--nav-font);
-    font-weight: 400;
-    text-decoration: none;
-    white-space: nowrap; /* Оставляем текст в одной строке */
-    transition: color 0.3s;
+  .navmenu a {
+    color: var(--nav-color); /* Цвет текста */
+    padding: 18px 15px; /* Внутренние отступы */
+    font-size: 13px; /* Размер шрифта */
+    text-transform: uppercase; /* Верхний регистр текста */
+    font-family: var(--nav-font); /* Шрифт из переменной */
+    font-weight: 400; /* Толщина шрифта */
+    text-decoration: none; /* Убираем подчеркивание */
+    white-space: nowrap; /* Запрещаем перенос текста */
+    transition: color 0.3s; /* Плавный переход цвета текста */
   }
 
   .navmenu a:hover,
   .navmenu .active {
-    color: var(--nav-hover-color); /* Цвет при наведении или активный пункт */
+    color: var(--nav-hover-color); /* Цвет текста при наведении или активном пункте */
   }
 
   .navmenu .dropdown ul {
-    display: none; /* Скрываем подменю */
-    position: absolute;
-    top: 100%;
+    display: none; /* Прячем подменю */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 100%; /* Располагаем ниже родительского пункта */
     left: 0;
-    background: var(--nav-dropdown-background-color); /* Фон подменю */
+    background: rgba(0, 0, 0, 0.9); /* Тёмный фон подменю */
     padding: 10px;
-    border-radius: 4px;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-    z-index: 99;
+    border-radius: 4px; /* Закругленные углы */
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5); /* Тень */
+    z-index: 99; /* Выше других элементов */
   }
 
   .navmenu .dropdown:hover ul {
     display: block; /* Показываем подменю при наведении */
   }
 
-  .navmenu .dropdown ul li {
-    margin: 5px 0;
-  }
-
-  .navmenu .dropdown ul a {
-    padding: 10px 20px;
-    font-size: 15px;
-    text-transform: none;
-    color: var(--nav-dropdown-color);
-  }
-
-  .navmenu .dropdown ul a:hover {
-    color: var(--nav-dropdown-hover-color); /* Цвет при наведении на подменю */
-  }
-
-  /* Скрываем кнопку-гамбургер в десктопной версии */
   .mobile-nav-toggle {
-    display: none;
+    display: none; /* Прячем кнопку-гамбургер в десктопной версии */
   }
 }
+
 
 /* Мобильное меню */
 @media (max-width: 1199px) {
   .navmenu {
-    display: none; /* Скрываем меню по умолчанию */
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    position: fixed;
-    inset: 0;
-    right: 0; /* Располагаем меню справа */
-    padding: 20px;
-    background: rgba(33, 37, 41, 0.9);
-    z-index: 9999;
-    overflow-y: auto;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(100%); /* Прячем за правым краем */
+    display: none; /* Прячем меню по умолчанию */
+    flex-direction: column; /* Пункты меню располагаются вертикально */
+    justify-content: flex-start; /* Выравнивание элементов по началу контейнера */
+    align-items: flex-start; /* Выравнивание пунктов по левому краю */
+    position: fixed; /* Фиксируем меню на экране */
+    top: 0; /* Располагаем у верхнего края */
+    right: 0; /* Меню выравнивается по правому краю */
+    width: 75%; /* Меню занимает 75% ширины экрана */
+    height: 100vh; /* Высота меню равна высоте экрана */
+    background: rgba(33, 37, 41, 0.95); /* Полупрозрачный фон */
+    z-index: 9999; /* Помещаем меню поверх других элементов */
+    padding: 20px; /* Внутренние отступы */
+    transform: translateX(100%); /* Прячем меню за пределами экрана */
+    transition: transform 0.3s ease-in-out; /* Анимация открытия */
+    overflow-y: auto; /* Добавляем прокрутку, если содержимого много */
   }
 
-  .mobile-nav-active .navmenu {
-    display: flex; /* Показываем меню */
+  .navmenu.active {
+    display: flex; /* Показываем меню при активном состоянии */
     transform: translateX(0); /* Перемещаем меню на экран */
   }
 
   .navmenu ul {
-    display: flex;
-    flex-direction: column; /* Располагаем пункты меню вертикально */
-    padding: 0;
-    margin: 0;
-    list-style: none;
+    flex-direction: column; /* Пункты меню в столбик */
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+    margin: 0; /* Убираем внешние отступы */
   }
 
   .navmenu li {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Отступы между пунктами меню */
   }
 
   .navmenu a {
-    text-decoration: none;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 17px;
-    font-weight: 500;
-    display: block;
-    transition: color 0.3s ease-in-out;
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #fff; /* Цвет текста */
+    padding: 10px 20px; /* Внутренние отступы */
+    font-size: 17px; /* Размер текста */
+    font-weight: 500; /* Полужирный текст */
+    display: block; /* Ссылки занимают всю ширину родителя */
+    transition: color 0.3s ease-in-out; /* Анимация смены цвета */
+    background: rgba(33, 37, 41, 0.95);
   }
 
   .navmenu a:hover {
-    color: var(--nav-hover-color);
+    color: #bbb; /* Серый цвет текста при наведении */
   }
 
-  .navmenu .dropdown ul {
-    display: none; /* Скрываем вложенные списки */
-    padding-left: 20px;
-    margin-top: 10px;
-    background-color: rgba(255, 255, 255, 0.1); /* Легкая заливка для подменю */
-    border-radius: 5px;
-  }
-
-  .navmenu .dropdown.active ul {
-    display: block; /* Показываем вложенные списки */
-  }
-
-  /* Показываем кнопку-гамбургер только на мобильных */
   .mobile-nav-toggle {
-    display: inline-block;
-    font-size: 24px;
-    cursor: pointer;
+    display: block;
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 10000;
+    z-index: 99999; /* Убедитесь, что это выше других элементов */
+    font-size: 24px;
     color: #fff;
+    cursor: pointer;
   }
 
-  .mobile-nav-toggle.bi-x {
-    font-size: 32px; /* Изменяем размер иконки при активном меню */
+  .header-social-links {
+    display: none; /* Скрываем социальные ссылки */
   }
 }
-
 
 
 
