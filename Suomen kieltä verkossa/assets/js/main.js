@@ -151,8 +151,8 @@
    */
   document.addEventListener("DOMContentLoaded", function () {
     const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
-    const navMenu = document.querySelector(".navmenu");
-    const dropdownToggles = document.querySelectorAll(".navmenu .dropdown > a");
+    const navMenu = document.querySelector("#navmenu");
+    const dropdownToggles = document.querySelectorAll("#navmenu .dropdown > a");
 
     // Переключение мобильного меню
     if (mobileNavToggle && navMenu) {
@@ -175,11 +175,10 @@
           if (submenu) submenu.style.display = "none";
         } else {
           document
-            .querySelectorAll(".navmenu .dropdown.active")
+            .querySelectorAll("#navmenu .dropdown.active")
             .forEach((activeDropdown) => {
               activeDropdown.classList.remove("active");
-              const activeSubmenu =
-                activeDropdown.querySelector("ul");
+              const activeSubmenu = activeDropdown.querySelector("ul");
               if (activeSubmenu) activeSubmenu.style.display = "none";
             });
           parent.classList.add("active");
@@ -190,3 +189,4 @@
     });
   });
 })();
+

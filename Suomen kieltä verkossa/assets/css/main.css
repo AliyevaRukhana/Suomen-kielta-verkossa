@@ -61,15 +61,25 @@
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
 body {
-  background-image: url('assets/img/Template Background 1.jpeg');
+  background-image: url(assets/img/Template_Background_1.jpeg); /* Исправлен пробел */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family:"Batang", serif;;
-  color: var(--default-color);
+  font-family: "Batang", serif, Arial; /* Добавлен запасной шрифт */
+  color: var(--default-color); /* Убедитесь, что переменная определена */
   margin: 0;
   padding: 0;
+  margin: 0;
+    font-family: var(--bs-body-font-family, "Arial", sans-serif);
+    font-size: var(--bs-body-font-size, 1rem);
+    font-weight: var(--bs-body-font-weight, 400);
+    line-height: var(--bs-body-line-height, 1.5);
+    color: var(--bs-body-color, #212529);
+    text-align: var(--bs-body-text-align, left);
+    background-color: var(--bs-body-bg, #ffffff);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -460,7 +470,7 @@ h6 {
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
   [data-aos-delay] {
-    transition-delay: 0 !important;
+    transition-delay: 0s !important;
   }
 }
 
