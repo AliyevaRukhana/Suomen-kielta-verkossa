@@ -238,6 +238,7 @@ h6 {
     background: transparent; /* Прозрачный фон */
     padding: 0; /* Убираем внутренние отступы */
     z-index: 1000; /* Помещаем меню поверх других элементов */
+    margin: auto; 
   }
 
   .navmenu ul {
