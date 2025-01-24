@@ -336,11 +336,11 @@ h6 {
     font-weight: 500; /* Полужирный текст */
     display: block; /* Ссылки занимают всю ширину родителя */
     transition: color 0.3s ease-in-out; /* Анимация смены цвета */
-    background: rgba(33, 37, 41, 0.95);
+    background: rgba(18, 20, 23, 0.95);
   }
 
   .navmenu a:hover {
-    color: #bbb; /* Серый цвет текста при наведении */
+    color: #e3efed; /* Серый цвет текста при наведении */
   }
 
   .navmenu .dropdown > a {
@@ -352,7 +352,7 @@ h6 {
     content: '\25BC'; /* Стрелка вниз */
     margin-left: 10px;
     font-size: 12px;
-    color: #fff;
+    color: #130c0c;
   }
 
   .navmenu .dropdown.active > a::after {
@@ -378,7 +378,7 @@ h6 {
     right: 20px;
     z-index: 99999; /* Убедитесь, что это выше других элементов */
     font-size: 24px;
-    color: #fff;
+    color: #0f0909;
     cursor: pointer;
   }
 
@@ -445,7 +445,7 @@ h6 {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  visibility: hidden;
+  visibility: active;
   opacity: 0;
   transition: opacity 0.4s;
 }
