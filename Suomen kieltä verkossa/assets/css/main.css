@@ -294,7 +294,7 @@ h6 {
 /* Мобильное меню */
 @media (max-width: 1199px) {
   .navmenu {
-    display: none; /* Прячем меню по умолчанию */
+    display: show; /* Прячем меню по умолчанию */
     flex-direction: column; /* Пункты меню располагаются вертикально */
     justify-content: flex-start; /* Выравнивание элементов по началу контейнера */
     align-items: flex-start; /* Выравнивание пунктов по левому краю */
