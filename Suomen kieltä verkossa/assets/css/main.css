@@ -313,7 +313,7 @@ h6 {
 
   .navmenu.active {
     display: inline-flex; /* Показываем меню при активном состоянии */
-    transform: translateX(0); /* Перемещаем меню на экран */
+    transform: translate3d(80px, 20px, 30px); /* Перемещаем меню на экран */
   }
 
   .navmenu ul {
